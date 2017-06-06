@@ -10,7 +10,7 @@ var img;
 function setup() {
   canvas = createCanvas(750, 563);
   canvas.position(250,0);
-  //capture = createCapture(VIDEO);
+  capture = createCapture(VIDEO);
 
   // Pick colors randomly
   r = 63;
@@ -22,7 +22,7 @@ function setup() {
 
 function draw() {
 	background(255, 255, 153);
-	//image(capture, 0, 0, 750, 563);
+	image(capture, 0, 0, 750, 563);
   
 	// Dibujar una mano
 	strokeWeight(2);
