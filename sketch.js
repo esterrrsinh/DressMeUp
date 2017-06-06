@@ -10,7 +10,7 @@ var img;
 function setup() {
 	canvas = createCanvas(750, 563);
 	canvas.position(250,0);
-	capture = createCapture(VIDEO);
+	
 	//capture.size(750, 563);
 	 
 	// Pick colors randomly
@@ -23,6 +23,7 @@ function setup() {
 
 function draw() {
 	background(255, 255, 153);
+	capture = createCapture(VIDEO);
 	image(capture, 0, 0, 750, 563);
   
 	// Dibujar una mano
