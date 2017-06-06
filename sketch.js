@@ -17,8 +17,7 @@ function setup() {
 	r = 63;
 	g = 158;
 	b = 242;
-	opacity = 127;
- 
+	opacity = 127; 
 }
 
 function draw() {
