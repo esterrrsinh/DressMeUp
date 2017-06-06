@@ -8,16 +8,17 @@ var inicio = 1;
 var img;
 
 function setup() {
-  canvas = createCanvas(750, 563);
-  canvas.position(250,0);
-  capture = createCapture(VIDEO);
-  //capture.size(750, 563);
+	canvas = createCanvas(750, 563);
+	canvas.position(250,0);
+	capture = createCapture(VIDEO);
+	capture.size(750, 563);
 	capture.position(250,0);
-  // Pick colors randomly
-  r = 63;
-  g = 158;
-  b = 242;
-  opacity = 127;
+	 
+	// Pick colors randomly
+	r = 63;
+	g = 158;
+	b = 242;
+	opacity = 127;
  
 }
 
