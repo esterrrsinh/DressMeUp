@@ -12,7 +12,6 @@ function setup() {
 	canvas.position(250,0);
 	capture = createCapture(VIDEO);
 	capture.size(750, 563);
-	capture.position(250,0);
 	 
 	// Pick colors randomly
 	r = 63;
