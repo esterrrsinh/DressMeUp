@@ -1,3 +1,13 @@
+/* 
+ * Ester Mateos Saldaña
+ * 44412895X
+ * estermateossal@hotmail.com
+ * Proyecto: DressMeUp
+ * Asginatura: Interacción Persona-Ordenador
+ * Fecha: 8 de junio de 2017
+ */
+ 
+/* Variables */
 var capture;
 var primeravez = 1;
 var menu=0;
@@ -22,10 +32,13 @@ var titlepago,nombreusu, direusu, tarjeta,reembolso,paypal, inputname, inputdir,
 var hepulsadopagar=0;
 var text_pedido;
 
-function setup() {
+
+/*-----------------------------------------------------*/
+	function setup() {
+/*-----------------------------------------------------*/
 	canvas = createCanvas(750, 563);
 	canvas.position(250,0);
-	//capture = createCapture(VIDEO);
+	capture = createCapture(VIDEO);
 	
 	r = 63;
 	g = 158;
@@ -36,13 +49,16 @@ function setup() {
 	}
 }
 
-function draw() {
+/*-----------------------------------------------------*/
+	function draw() {
+/*-----------------------------------------------------*/
 	background(255, 255, 153);	
-	//image(capture, 0, 0, 750, 563);
+	image(capture, 0, 0, 750, 563);
 	
 	/*if(menu == 1) {
 		
 	}*/
+	
 	if (menu == 2) {
 		stroke(r, g, b);
 		fill(r, g, b, 127);
@@ -76,17 +92,20 @@ function draw() {
 	}
 }
 
-
-function mouseClicked() {	
+/*-----------------------------------------------------*/
+	function mouseClicked() {	
+/*-----------------------------------------------------*/	
 	if(menu == 0) {
 		var d = dist(mouseX, mouseY, 375, 281);
 		if (d < 70) {
 			menu1();
 		}
 	}
+	
 	if(menu == 1) {
 		img_flecha.hide();
 	}
+	
 	if(menu == 2){
 		var d = dist(mouseX, mouseY, 78, 54); 
 		if(d<40) {
@@ -106,8 +125,7 @@ function mouseClicked() {
 			texto_abrigos.hide();
 			nametiendaP.hide();
 		}
-		
-		
+			
 		var d3 = dist(mouseX, mouseY, 150, 220); // Pulsa en CAMISETAS
 		if(d3<90) {
 			tip=1;
@@ -221,7 +239,6 @@ function mouseClicked() {
 		var d14 = dist(mouseX, mouseY, 364, 414); 
 		var d15 = dist(mouseX, mouseY, 562, 418); 
 		if((d10<90) || (d11<90) || (d12<90) || (d13<90) || (d14<90) || (d15<90)) {
-			
 			if(verprenda==1) {
 				verprenda=0;
 			}
@@ -231,6 +248,7 @@ function mouseClicked() {
 		}
 		
 	}
+	
 	if(menu == 4) {
 		var d = dist(mouseX, mouseY, 78, 54); 
 		if(d<40) { //Si pulsa atrás
@@ -265,7 +283,10 @@ function mouseClicked() {
 	
 }
 
-function menu0() {
+/*-----------------------------------------------------*/
+	function menu0() {
+/*-----------------------------------------------------*/
+
 	imgmano = createImg("http://icon-icons.com/icons2/817/PNG/512/thefreeforty_hand_icon-icons.com_66340.png");
 	imgmano.position(560, 220);
 	imgmano.size(100,100);
@@ -273,7 +294,9 @@ function menu0() {
 	menu=0;
 }
 
-function menu1() {
+/*-----------------------------------------------------*/
+	function menu1() {
+/*-----------------------------------------------------*/
 	menu=1;
 	imgmano.hide();
 	
@@ -323,7 +346,9 @@ function menu1() {
 	}
 }
 
-function menu2() {
+/*-----------------------------------------------------*/
+	function menu2() {
+/*-----------------------------------------------------*/
 	menu=2;
 	imgmano.hide();
 	text_eligetienda.hide();
@@ -401,7 +426,9 @@ function menu2() {
 	texto_faldas.style("font-size", "14pt");
 }
 
-function menu3(numerotienda) {
+/*-----------------------------------------------------*/
+	function menu3(numerotienda) {
+/*-----------------------------------------------------*/
 	menu=3;
 	
 	imgmano.hide();
@@ -634,7 +661,9 @@ function menu3(numerotienda) {
 	verprenda=1;
 }
 
-function menu4() {
+/*-----------------------------------------------------*/
+	function menu4() {
+/*-----------------------------------------------------*/	
 	menu=4;
 	imgmano.hide();
 	text_eligetienda.hide();
@@ -747,7 +776,9 @@ function menu4() {
 	
 }
 
-function menu5() {
+/*-----------------------------------------------------*/
+	function menu5() {
+/*-----------------------------------------------------*/
 	menu=5;
 	s.hide();
 	m.hide();
