@@ -18,10 +18,14 @@ var tiprenda6, img6_1, img6_2, img6_3, img6_4, img6_5, img6_6;
 var tip;
 var verprenda=0;
 var s,m,l,descripcion,carrito;
+var titlepago,nombreusu, direusu, tarjeta,reembolso,paypal, inputname, inputdir, buttonpago;
+var hepulsadopagar=0;
+var text_pedido;
+
 function setup() {
 	canvas = createCanvas(750, 563);
 	canvas.position(250,0);
-	capture = createCapture(VIDEO);
+	//capture = createCapture(VIDEO);
 	
 	r = 63;
 	g = 158;
@@ -34,15 +38,11 @@ function setup() {
 
 function draw() {
 	background(255, 255, 153);	
-	image(capture, 0, 0, 750, 563);
+	//image(capture, 0, 0, 750, 563);
 	
-	if(menu == 1) {
-		//strokeWeight(2);
-		//stroke(r, g, b);
-		//fill(r, g, b, 127);
-		//rect(200, -200, 300, 120); 
-		//rect(-50, 50, 300, 120);
-	}
+	/*if(menu == 1) {
+		
+	}*/
 	if (menu == 2) {
 		stroke(r, g, b);
 		fill(r, g, b, 127);
@@ -64,6 +64,15 @@ function draw() {
 		rect(685, 30, 40, 40);
 		rect(575, 90, 150, 300);
 		rect(575, 420, 150, 50);		
+	}
+	
+	if (menu == 5) {
+		stroke(r, g, b);
+		fill(r, g, b, 127);
+		rect(100, 30, 530, 50); 
+		rect(150, 300, 120, 50); 
+		rect(290, 300, 120, 50); 
+		rect(431, 300, 120, 50);
 	}
 }
 
@@ -214,11 +223,9 @@ function mouseClicked() {
 		if((d10<90) || (d11<90) || (d12<90) || (d13<90) || (d14<90) || (d15<90)) {
 			
 			if(verprenda==1) {
-				var p=createP("1");
 				verprenda=0;
 			}
 			else {
-				var p=createP("0");
 				menu4();
 			}
 		}
@@ -234,7 +241,28 @@ function mouseClicked() {
 			carrito.hide();
 			descripcion.hide();
 		}
+		
+		var d20 = dist(mouseX, mouseY, 656, 442);
+		if (d20<30) {
+			menu5();
+		}
 	}
+	if(menu == 5) {
+		var d = dist(mouseX, mouseY, 78, 54); 
+		if(d<40) { //Si pulsa atrás
+			menu4();
+			titlepago.hide();
+			nombreusu.hide();
+			direusu.hide();
+			target.hide();
+			paypal.hide();
+			reembolso.hide();
+			inputname.hide();
+			inputdir.hide();
+			buttonpago.hide();
+		}
+	}
+	
 }
 
 function menu0() {
@@ -274,6 +302,25 @@ function menu1() {
 	button1 = createButton('Ver');
 	button1.position(input.x + input.width, 150);
 	button1.mousePressed(menu2);
+	
+	if(hepulsadopagar == 1) {
+		titlepago.hide();
+		nombreusu.hide();
+		direusu.hide();
+		target.hide();
+		paypal.hide();
+		reembolso.hide();
+		inputname.hide();
+		inputdir.hide();
+		buttonpago.hide();
+		img_flecha.hide();
+		
+		text_pedido = createP('Pedido realizado correctamente');
+		text_pedido.style("font-family", "Helvetica");
+		text_pedido.style("color", "#FFFF00");
+		text_pedido.style("font-size", "14pt");
+		text_pedido.position(470, 40);
+	}
 }
 
 function menu2() {
@@ -284,6 +331,10 @@ function menu2() {
 	text_ayuda2.hide();
 	input.hide();
 	button1.hide();
+	if (hepulsadopagar == 1) {
+		text_pedido.hide();
+		hepulsadopagar=0;
+	}
 	
 	nametienda = input.value();
 	nametiendaP = createP(nametienda);
@@ -693,5 +744,71 @@ function menu4() {
 	carrito.style("font-family", "Helvetica");
 	carrito.style("color", "#FFFFFF");
 	carrito.style("font-size", "14pt");		
+	
+}
+
+function menu5() {
+	menu=5;
+	s.hide();
+	m.hide();
+	l.hide();
+	carrito.hide();
+	descripcion.hide();
+	
+	titlepago = createP("PAGO");
+	titlepago.position(550, 15);
+	titlepago.style("font-family", "Helvetica");
+	titlepago.style("color", "#FFFFFF");
+	titlepago.style("font-size", "20pt");
+	titlepago.style("font-weight", "bold");
+	
+	nombreusu = createP("Nombre");
+	nombreusu.position(400, 90);
+	nombreusu.style("font-family", "Helvetica");
+	nombreusu.style("color", "#FFFFFF");
+	nombreusu.style("font-size", "14pt");
+	nombreusu.style("font-weight", "bold");
+	
+	direusu = createP("Direccion");
+	direusu.position(400, 200);
+	direusu.style("font-family", "Helvetica");
+	direusu.style("color", "#FFFFFF");
+	direusu.style("font-size", "14pt");
+	direusu.style("font-weight", "bold");
+	
+	target = createP("Tarjeta");
+	target.position(435, 300);
+	target.style("font-family", "Helvetica");
+	target.style("color", "#FFFFFF");
+	target.style("font-size", "11pt");
+	target.style("font-weight", "bold");
+	
+	paypal = createP("Paypal");
+	paypal.position(578, 300);
+	paypal.style("font-family", "Helvetica");
+	paypal.style("color", "#FFFFFF");
+	paypal.style("font-size", "11pt");
+	paypal.style("font-weight", "bold");
+	
+	reembolso = createP("&nbsp;&nbsp;&nbsp;Contra<br>reembolso");
+	reembolso.position(705, 290);
+	reembolso.style("font-family", "Helvetica");
+	reembolso.style("color", "#FFFFFF");
+	reembolso.style("font-size", "11pt");
+	reembolso.style("font-weight", "bold");
+	
+	inputname = createInput();
+	inputname.position(400, 150);
+	inputname.size(400, 30);
+	inputdir = createInput();
+	inputdir.position(400, 250);
+	inputdir.size(400, 30);
+	
+	buttonpago = createButton('Pagar');
+	buttonpago.position(400, 450);
+	buttonpago.size(400,30);
+	hepulsadopagar=1;
+	buttonpago.mousePressed(menu1);
+	
 	
 }
