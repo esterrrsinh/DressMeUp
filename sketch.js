@@ -25,9 +25,9 @@ function setup() {
 }
 
 function draw() {
-	
+ background(255, 255, 153);	
 	image(capture, 0, 0, 750, 563);
-  background(255, 255, 153);
+ 
 	// Dibujar una mano
 	strokeWeight(2);
 	stroke(r, g, b);
