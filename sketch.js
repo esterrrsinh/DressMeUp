@@ -16,7 +16,7 @@ function setup() {
 	canvas = createCanvas(750, 563);
 	canvas.position(250,0);
 	capture = createCapture(VIDEO);
-	capture.size(750, 563);
+	//capture.size(750, 563);
 	 
 	r = 63;
 	g = 158;
