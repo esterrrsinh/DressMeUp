@@ -10,6 +10,16 @@ var tipoprenda=0;
 var nametienda;
 var camisetas, camisas, pantalones, abrigos, faldas, sudaderas;
 
+function preload() {
+	img1_1 = createImg("https://static.zara.net/photos///2017/V/0/1/p/1198/026/084/3/w/1024/1198026084_6_1_1.jpg?ts=1495817172871");
+	img1_2 = createImg("https://static.zara.net/photos///2017/V/0/1/p/0858/044/061/2/w/1024/0858044061_6_1_1.jpg?ts=1493218541959");
+	img1_3 = createImg("https://static.zara.net/photos///2017/V/0/1/p/0264/078/031/2/w/1024/0264078031_6_1_1.jpg?ts=1495191460846");
+	img1_4 = createImg("https://static.zara.net/photos///2017/V/0/1/p/0264/078/330/2/w/1024/0264078330_6_1_1.jpg?ts=1495626488463");
+	img1_5 = createImg("https://static.zara.net/photos///2017/V/0/1/p/1501/094/064/2/w/1024/1501094064_6_1_1.jpg?ts=1495626775757");
+	img1_6 = createImg("https://static.zara.net/photos///2017/V/0/1/p/3253/006/400/2/w/1024/3253006400_6_1_1.jpg?ts=1495627074565");
+			
+}
+
 function setup() {
 	canvas = createCanvas(750, 563);
 	canvas.position(250,0);
@@ -130,24 +140,18 @@ function draw() {
 			tiprenda1.style("font-size", "20pt");
 			tiprenda1.style("font-weight", "bold");
 		
-			img = createImg("https://static.zara.net/photos///2017/V/0/1/p/1198/026/084/3/w/1024/1198026084_6_1_1.jpg?ts=1495817172871");
-			img.position(350, 140);
-			img.size(130, 130);
-			img = createImg("https://static.zara.net/photos///2017/V/0/1/p/0858/044/061/2/w/1024/0858044061_6_1_1.jpg?ts=1493218541959");
-			img.position(550, 140);
-			img.size(130, 130);
-			img = createImg("https://static.zara.net/photos///2017/V/0/1/p/0264/078/031/2/w/1024/0264078031_6_1_1.jpg?ts=1495191460846");
-			img.position(750, 140);
-			img.size(130, 130);
-			img = createImg("https://static.zara.net/photos///2017/V/0/1/p/0264/078/330/2/w/1024/0264078330_6_1_1.jpg?ts=1495626488463");
-			img.position(750, 340);
-			img.size(130, 130);
-			img = createImg("https://static.zara.net/photos///2017/V/0/1/p/1501/094/064/2/w/1024/1501094064_6_1_1.jpg?ts=1495626775757");
-			img.position(550, 340);
-			img.size(130, 130);
-			img = createImg("https://static.zara.net/photos///2017/V/0/1/p/3253/006/400/2/w/1024/3253006400_6_1_1.jpg?ts=1495627074565");
-			img.position(350, 340);
-			img.size(130, 130);
+			img1_1.position(350, 140);
+			img1_1.size(130, 130);
+			img1_2.position(550, 140);
+			img1_2.size(130, 130);
+			img1_3.position(750, 140);
+			img1_3.size(130, 130);
+			img1_4.position(750, 340);
+			img1_4.size(130, 130);
+			img1_5.position(550, 340);
+			img1_5.size(130, 130);
+			img1_6.position(350, 340);
+			img1_6.size(130, 130);
 		}
 		if(tipoprenda == 2) { //Pantalones
 			var tiprenda2 = createP("PANTALONES");
